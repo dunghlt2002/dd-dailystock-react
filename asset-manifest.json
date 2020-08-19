@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/dd-dailystock-react/static/css/main.0864afc1.chunk.css",
+    "main.js": "/dd-dailystock-react/static/js/main.6fdca287.chunk.js",
+    "main.js.map": "/dd-dailystock-react/static/js/main.6fdca287.chunk.js.map",
+    "runtime-main.js": "/dd-dailystock-react/static/js/runtime-main.136609fd.js",
+    "runtime-main.js.map": "/dd-dailystock-react/static/js/runtime-main.136609fd.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/dd-dailystock-react/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.863f0a2f.chunk.js": "/dd-dailystock-react/static/js/2.863f0a2f.chunk.js",
+    "static/js/2.863f0a2f.chunk.js.map": "/dd-dailystock-react/static/js/2.863f0a2f.chunk.js.map",
+    "index.html": "/dd-dailystock-react/index.html",
+    "precache-manifest.85d16e03685b4215c2973fac3fc8ff43.js": "/dd-dailystock-react/precache-manifest.85d16e03685b4215c2973fac3fc8ff43.js",
+    "service-worker.js": "/dd-dailystock-react/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/dd-dailystock-react/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.0864afc1.chunk.css.map": "/dd-dailystock-react/static/css/main.0864afc1.chunk.css.map",
+    "static/js/2.863f0a2f.chunk.js.LICENSE.txt": "/dd-dailystock-react/static/js/2.863f0a2f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.136609fd.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.863f0a2f.chunk.js",
+    "static/css/main.0864afc1.chunk.css",
+    "static/js/main.6fdca287.chunk.js"
+  ]
+}

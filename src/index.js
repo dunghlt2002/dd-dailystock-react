@@ -2,12 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import store from './store';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
+// TriDung: we add our code from this below line: npm install react-router-dom --save
+import { BrowserRouter } from "react-router-dom";
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 

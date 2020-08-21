@@ -25,17 +25,90 @@ class App extends Component {
       email:''
   }
   }
+  
+  logoutHandler = (e) => {
+    e.preventDefault();
+    this.props.userLogoutFetch();
+    window.location="/";    // khong biet lam sao
+  }
+
+  componentDidMount() {
+    
+  }
+
+  openMenu = () => {
+    document.querySelector(".sidebar").classList.add("open");
+  }
+
+  closeMenu = () => {
+    document.querySelector(".sidebar").classList.remove("open");
+  }
+
+  isActionChange = (event) => {
+    var name = event.target.name;
+    var value = event.target.value;
+    // console.log('doi tuong : ' + name);
+    // console.log('gia tri : ' + value);
+    this.setState({ 
+      usvn_longtieng: value
+    });
+  }
+
 
   render() {
 
     return (
-<div>
+      <Router>
         <header className="header">
           <div className="brand">
             <button onClick={this.openMenu}>
                   &#9776;
             </button>
             <a href="/underconstruction/">DD Daily Stock</a>
+          </div>
+          <div className="header-links">
+
+            {
+              this.props.currUser.userInfo ? <Link to={"/userProfile/" + this.props.currUser.userInfo.id}>Profile: {this.props.currUser.userInfo.user}</Link> : <Link to="/signin">Sign In</Link>
+            }
+            {/* {userInfo && userInfo.isAdmin && ( */}
+            {(
+              <div className="dropdown">
+                <a>
+                  {this.props.currUser.userInfo ? 'Admin Menu' : null
+                  }
+                </a>
+                <ul className="dropdown-content">
+                  <li>
+                    {
+                      // this.getUser(this.props.currUser.userInfo.id);
+                     this.props.currUser.userInfo ? <Link to={"/userProfile/" + this.props.currUser.userInfo.id}>Profile: {this.props.currUser.userInfo.user}</Link> : <Link to="/signin">Sign In</Link>
+                    }
+                    <Link onClick={this.logoutHandler}>Logout</Link>
+                  </li>
+                  <li>
+                    {/* <Link to="/underconstruction">Orders List</Link> */}
+                  </li>
+                  {/* Phan quyen so so */}
+                  { this.props.currUser.userInfo ? ( this.props.currUser.userInfo.isadmin === 0 ?
+                    <div>
+                        <li>
+                          <Link to="/users">Users List</Link>
+                          <Link to="/adduser">Add User</Link>
+                        </li>
+                        <li>
+                          <Link to="/underconstruction">Add Product</Link>
+                          <Link to="/underconstruction">Add Customer</Link>
+                        </li>
+
+                    </div>
+                  : null ) : null
+                  }
+
+                  
+                </ul>
+              </div>
+            )}
           </div>
         </header>
         
@@ -65,10 +138,25 @@ class App extends Component {
           </ul>
         </aside>
 
-
-    </div>
-    )
-}
+        <div>
+          <div className="container">
+            <Switch>
+              <Route path="/" exact={true} component={HomeScreen} />
+              <Route exact path={["/signin"]} component={SigninScreen} />
+              <Route exact path={"/users"} component={UsersList} />
+              <Route exact path={"/adduser"} component={AddUser} />
+              <Route exact path={"/userProfile/:id"} component={UserProfile} />
+              <Route exact path={"/importcsv"} component={ImportCSV} />
+              <Route exact path={"/dailystocks/:currentPage" } component={TradingList} />
+              <Route exact path="/tradedetail/:slug.:id.html" component={TradeDetail}/>
+              <Route exact path={"/editTrade/:id"} component={EditTrade} />
+              <Route exact path={"/underconstruction"} component={UnderConstruction} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    );
+  }
 }
 
 const mapDispatchToProps = dispatch => ({

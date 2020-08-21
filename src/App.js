@@ -175,3 +175,10 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 // export default App;
+
+    // "start": "react-scripts start",
+    // "build": "react-scripts build",
+    // "test": "react-scripts test",
+    // "predeploy": "npm run build",
+    // "deploy": "gh-pages -d build",
+    // "eject": "react-scripts eject"

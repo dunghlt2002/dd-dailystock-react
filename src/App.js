@@ -69,6 +69,7 @@ class App extends Component {
     </div>
     )
 }
+}
 
 const mapDispatchToProps = dispatch => ({
   userLogoutFetch: () => dispatch(userLogoutFetch())
